@@ -76,5 +76,9 @@ stop.onclick = function() {
     var result = document.getElementById('result');
     result.src = window.URL.createObjectURL(compile);
     result.autoplay = true;
+
+    if (!navigator.getUserMedia)
+        return ;
+    localStream.stop();
 };
 })();
